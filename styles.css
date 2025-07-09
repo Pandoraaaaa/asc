@@ -55,14 +55,6 @@ header {
   gap: 2em;
   padding: 2em;
 }
-.image-placeholder {
-  width: 150px;
-  height: 150px;
-  background-color: #aaa;
-}
-.products {
-  padding: 2em;
-}
-.products a {
-  color: darkblue;
+.content {
+  max-width: 800px;
 }
