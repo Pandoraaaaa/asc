@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MixitWin Program Details - Agricultural Software Consultants, Inc.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #c6d3db;
+            color: #000;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5em 1em;
+            background-color: black;
+            color: white;
+        }
+        
+        .contact-button {
+            background-color: #fff;
+            color: black;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+        }
+        
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background: #333;
+            color: white;
+        }
+        
+        .main-nav .logo {
+            font-weight: bold;
+            color: #ff4444;
+            font-size: 1.2em;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.25em 0.5em;
+        }
+        
+        .main-nav a:hover {
+            background-color: #555;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #444, #333);
+            padding: 3em 1em;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0.5em;
+            border: 2px solid white;
+            display: inline-block;
+        }
+        
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+        
+        .section {
+            margin-bottom: 1.5em;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: #444;
+            color: white;
+            padding: 1em;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .section-header:hover {
+            background: #555;
+        }
+        
+        .section-content {
+            padding: 1em;
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        .section-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+        }
+        
+        .section-content ul {
+            margin: 0;
+            padding-left: 1.5em;
+        }
+        
+        .section-content li {
+            margin-bottom: 0.5em;
+            line-height: 1.5;
+        }
+        
+        .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .arrow.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .intro-text {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5em;
+            border-radius: 5px;
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>Agricultural Software Consultants, Inc.</span>
+        <a href="#" class="contact-button">Contact Us</a>
+    </div>
+    
+    <nav class="main-nav">
+        <div class="logo">🏢 Feed Formulation Software</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">MixitWin</a></li>
+            <li><a href="#">MixitHandy</a></li>
+            <li><a href="#">MixitPet</a></li>
+            <li><a href="#">Ingredients</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">🔍</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <h1>MixitWin Program Details</h1>
+    </div>
+    
+    <div class="content">
+        <div class="intro-text">
+            <p>The purpose of MixitWin is to create, display, and export rations. MixitWin lets you create two types of rations. In the first type you select the ingredients and their amounts and MixitWin calculates the nutrient content of the ration (this is a "hand-entered ration"). In the second type you select the ingredients and specify constraints that the ration must satisfy, such as minimum or maximum amounts of protein and wheat, and MixitWin selects the ingredient amounts for you (this is a "balanced ration"). Linear programming guarantees that a balanced ration is also a least-cost ration. There are many suggestions for balancing a ration when ingredients do not meet the constraints.</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>More</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>See, print, save, and export many ration reports.</li>
+                    <li>Some ration reports show nutrients on an as fed and dry matter basis.</li>
+                    <li>Balanced ration reports show ingredient and nutrient amounts and constraints.</li>
+                    <li>Balanced ration reports have high and low prices, opportunity prices, and costs.</li>
+                    <li>Batch weight reports arrange ingredients into groups such as Bulk or Hand Add.</li>
+                    <li>Other reports show ingredients with batch and scale weights for mill operators.</li>
+                    <li>There are multiple ration reports, as well as reports in Word and Excel format.</li>
+                    <li>See what each ingredient in the ration contributes to a specified nutrient.</li>
+                    <li>Constrain ingredients and nutrients on an as fed or dry matter basis.</li>
+                    <li>See nutrient ratios and constrain them in a balanced ration.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>Overview and support</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>An easy tutorial provides a quick start.</li>
+                    <li>Built on the Microsoft Access database engine for secure data.</li>
+                    <li>Linear programming calculates least cost commercial animal rations and premixes.</li>
+                    <li>Print balanced ration reports, multiple ration reports, and many more reports.</li>
+                    <li>Export and import data in a variety of formats including xls, csv, xml.</li>
+                    <li>Choose English or Spanish, or enter words of another language.</li>
+                    <li>Complete product documentation in an integrated help system.</li>
+                    <li>Use the American, metric, or another measurement system.</li>
+                    <li>Whitepapers discuss advanced topics and solutions.</li>
+                    <li>Added software for nutritionists and feed mills.</li>
+                    <li>Integrated with MixitHandy for mobile feed formulation.</li>
+                    <li>Discounted software upgrade fees and multi-user licenses.</li>
+                    <li>No annual license fee.</li>
+                    <li>Unlimited email technical support.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>General Features</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Balance rations by daily amounts.</li>
+                    <li>Balance rations by nutrient and ingredient constraints.</li>
+                    <li>Calculate nutrient amounts from equations while balancing rations.</li>
+                    <li>Factor ingredient and nutrient constraints; factor nutrients in ingredients.</li>
+                    <li>Maintain separate databases for different plants, clients or animal types.</li>
+                    <li>Change the value of a nutrient based on the values of other nutrients.</li>
+                    <li>Add or delete an ingredient or nutrient in many rations automatically.</li>
+                    <li>Export data to text files, spreadsheets and word processing programs.</li>
+                    <li>Import data from the MIXIT2 or MIXIT2+ feed formulation programs.</li>
+                    <li>Record products you purchase; write purchase orders.</li>
+                    <li>Change prices by price equations.</li>
+                    <li>Automatically back up your data.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>Unique Features</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <p>When balancing a least-cost ration there is no limit, except computer memory, to the number of ingredients, nutrients and constraints you may use. In practical terms, this means you can save thousands of ingredients, nutrients and rations in a single database and use hundreds of ingredients, nutrients and constraints in making a balanced, least-cost ration.</p>
+                <p>Get specific help with balancing rations. A balanced, least-cost ration is not possible if the ingredients that you select cannot meet your ingredient, nutrient and ratio constraints. In this case MixitWin provides very specific help. An example of this help is the message "Lower the minimum of Protein to 12.907 or include ingredients high in Protein."</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>Latest Features</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Requirement feeding is an economical way of feeding animals.</li>
+                    <li>Balance rations economically for animals with fixed dry matter intake.</li>
+                    <li>A paper explains these and other uses of computer feed formulation programs.</li>
+                    <li>Receive rations, ingredients and prices from a MixitWin program or customer.</li>
+                    <li>Send rations, ingredients and prices to a MixitWin program or customer.</li>
+                    <li>Use six alternate ingredient prices and change their names.</li>
+                    <li>Save a ration as an ingredient in two different ways.</li>
+                    <li>Back up data to separate folders.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>Ingredients</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <p>MixitWin gets ingredient data from NRC tables and other sources. You can:</p>
+                <ul>
+                    <li>Enter new ingredients, and change or delete current ingredients.</li>
+                    <li>Select ingredients for rations, and group ingredients on reports.</li>
+                    <li>Copy the nutrient values of one ingredient to another ingredient.</li>
+                    <li>Give ingredients a price, dry matter %, and amount of each nutrient.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <span>Nutrients</span>
+                <span class="arrow">▶</span>
+            </div>
+            <div class="section-content">
+                <p>MixitWin gets nutrient data from NRC tables and other sources. You can:</p>
+                <ul>
+                    <li>Enter new nutrients, and change or delete current nutrients.</li>
+                    <li>Select nutrients for rations, and group nutrients on reports.</li>
+                    <li>Give nutrients a name and unit of measure, such as Vitamin A (IU/kg).</li>
+                    <li>See daily nutrient amounts, like Protein (g/day) and Vitamin A (IU/day).</li>
+                    <li>Multiply nutrient values by a constant and add to another nutrient.</li>
+                    <li>See nutrients in the order you select, and choose their visibility.</li>
+                    <li>Nutrients can be visible on the screen, but not in reports.</li>
+                    <li>Only show nutrients that are appropriate to a ration type.</li>
+                    <li>Change all nutrient values of one ingredient.</li>
+                    <li>Change one nutrient value of all ingredients.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrow.classList.remove('expanded');
+            } else {
+                content.classList.add('active');
+                arrow.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>
