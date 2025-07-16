@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mixithandy</title>
+  <title>MixitHandy</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    a { color: black; text-decoration: underline; }
     details { margin-bottom: 1em; background: #d1dbe3; padding: 1em; border-radius: 5px; }
     summary { font-weight: bold; cursor: pointer; }
   </style>
@@ -14,49 +15,90 @@
   <header>
     <div class="top-bar">
       <div class="company-name">Agricultural Software Consultants, Inc.</div>
-      <a href="#" class="contact-button">Contact Us</a>
+      <a href="about.html" class="contact-button">Contact Us</a>
     </div>
     <nav class="main-nav">
       <div class="logo">Feed Formulation Software</div>
       <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="mixitwin.html">MixitWin</a></li>
-  <li><a href="mixithandy.html">MixitHandy</a></li>
-  <li><a href="mixitpet.html">MixitPet</a></li>
-  <li><a href="ingredients.html">Ingredients</a></li>
-  <li><a href="resources.html">Resources</a></li>
-  <li><a href="about.html">About Us</a></li>
-</ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mixitwin.html">MixitWin</a></li>
+        <li><a href="mixithandy.html">MixitHandy</a></li>
+        <li><a href="mixitpet.html">MixitPet</a></li>
+        <li><a href="ingredients.html">Ingredients</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
     </nav>
     <div class="hero">
-      <h1>Mixithandy</h1>
+      <h1>MixitHandy</h1>
     </div>
   </header>
   <main>
-    <section class="intro">
+    <section class="intro" style="flex-direction: column;">
       <div class="content">
-        
-<p>MixitHandy is a web app that you can use to create rations. Try it out free with demo data: <a href="#">MixitHandy</a></p>
-<p><strong>$0.10/day</strong> (regularly $4.99/day) – Introductory Rate</p>
-<ul>
-  <li>$49.99/month</li>
-  <li>$499.99/year</li>
-</ul>
-<p>You can purchase just the time you need... see: <a href="#">Ingredients</a></p>
 
-<details><summary>More</summary>
-<p>MixitHandy lets you create two types of rations...</p>
-</details>
-<details><summary>Program Details</summary>
-<ul><li>Built on Firebase</li><li>CSV export/import</li><li>Unlimited support</li><li>Integration with MixitWin</li></ul>
-</details>
-<details><summary>Unique Features</summary>
-<p>Advanced nutrient balancing help and no ingredient limits...</p>
-</details>
-<details><summary>Ingredients and Nutrients</summary>
-<ul><li>Add/edit/delete ingredients and nutrients</li><li>Daily values and nutrient ratios</li></ul>
-</details>
+        <p>MixitHandy is a web app that you can use to create rations. Try it out free with demo data:
+          <a href="https://mixithandby.com" target="_blank">MixitHandy</a>
+        </p>
 
+        <p><strong>$0.10/day</strong> (regularly $4.99/day) – Introductory Rate</p>
+        <ul>
+          <li>$49.99/month</li>
+          <li>$499.99/year</li>
+        </ul>
+        <p>You can purchase just the time you need and come back whenever you like with your data ready to take up where you left off. With an annual subscription you can choose from any of our ingredient datasets here: <a href="ingredients.html">Ingredients</a></p>
+
+        <details><summary>More</summary>
+          <p>MixitHandy lets you create two types of rations (also called "diets").</p>
+          <ul>
+            <li>In the first type you select the ingredients and their amounts and MixitHandy calculates the nutrient content of the ration; this is a hand-entered ration.</li>
+            <li>In the second, you specify constraints that the ration must satisfy, such as minimum or maximum amounts of protein and energy, and MixitHandy selects the ingredients and their amounts; this is a balanced ration.</li>
+          </ul>
+          <p>You can</p>
+          <ul>
+            <li>Show reports for balanced rations with ingredient and nutrient amounts and constraints.</li>
+            <li>Show reports for balanced rations with high and low prices, opportunity prices, and costs.</li>
+            <li>Constrain ingredients and nutrients on an as fed or a dry matter basis; use nutrient ratios.</li>
+            <li>See suggestions for balancing a ration when ingredients do not meet the nutrient constraints.</li>
+          </ul>
+        </details>
+
+        <details><summary>Program Details</summary>
+          <ul>
+            <li>Built on the powerful Firebase platform from Google.</li>
+            <li>Calculate least cost commercial animal rations and premixes.</li>
+            <li>Balanced ration reports and multiple ration reports.</li>
+            <li>Batch and scale weight reports for mill operators.</li>
+            <li>Balance least-cost rations by linear programming.</li>
+            <li>American, metric and other measurement systems.</li>
+            <li>Data export and import in text (csv) files.</li>
+            <li>Unlimited email technical support.</li>
+            <li>Integration with MixitWin.</li>
+          </ul>
+        </details>
+
+        <details><summary>Unique Features</summary>
+          <p>The following features of MixitHandy are often not available in feed formulation programs.</p>
+          <ul>
+            <li>When balancing a least-cost ration there is no limit, except computer memory, to the number of ingredients, nutrients and constraints you may use. In practical terms, this means you can save thousands of ingredients, nutrients and rations in a single database and use hundreds of ingredients, nutrients and constraints in making a balanced, least-cost ration.</li>
+            <li>Get specific help with balancing rations. A balanced, least-cost ration is not possible if the ingredients that you select cannot meet your ingredient, nutrient and ratio constraints. In this case MixitHandy provides very specific help. An example of this help is the message “Lower the minimum of Protein to 12.907 or include ingredients high in Protein.”</li>
+            <li>Ingredients can get their data automatically from rations or diets.</li>
+          </ul>
+        </details>
+
+        <details><summary>Ingredients and nutrients</summary>
+          <ul>
+            <li>Enter new ingredients, and change or delete current ingredients.</li>
+            <li>Give ingredients a price, dry matter %, and amounts of nutrients.</li>
+            <li>Copy nutrient values of one ingredient to another ingredient.</li>
+            <li>Enter new nutrients, and change or delete current nutrients.</li>
+            <li>See daily nutrient values such as Protein (g/day) and Vitamin A (IU/kg).</li>
+            <li>See nutrients that are appropriate to each type of ration, such as Dairy or Poultry.</li>
+            <li>Select and change nutrients and units of measure such as Protein (%) and Vitamin A (IU/G).</li>
+          </ul>
+        </details>
+
+        <p style="margin-top: 2em;"><strong>MIXIT</strong> Agricultural Software Consultants, Inc.</p>
       </div>
     </section>
   </main>
