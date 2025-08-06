@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sleek Animal Carousel</title>
+  <style>
+    body {
+      background-color: #a8b8c2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .carousel {
+      width: 120px;
+      height: 120px;
+      position: relative;
+    }
+
+    .carousel img {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 32px;
+      color: rgba(255, 255, 255, 0.6);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+      display: none;
+      user-select: none;
+    }
+
+    .arrow.left {
+      left: 5px;
+    }
+
+    .arrow.right {
+      right: 5px;
+    }
+
+    .carousel:hover .arrow {
+      display: block;
+    }
+
+    .arrow:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="arrow left">&#8249;</div>
+  <div class="arrow right">&#8250;</div>
+
+  <img src="bull.gif" class="active" alt="Bull">
+  <img src="calf.gif" alt="Calf">
+  <img src="cat.gif" alt="Cat">
+  <img src="chicken.gif" alt="Chicken">
+  <img src="cow.gif" alt="Cow">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.carousel img');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+  let index = 0;
+  let isPaused = false;
+
+  function showImage(i) {
+    images.forEach((img, idx) => {
+      img.classList.toggle('active', idx === i);
+    });
+  }
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    showImage(index);
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    showImage(index);
+  }
+
+  let interval = setInterval(() => {
+    if (!isPaused) nextImage();
+  }, 2000);
+
+  images.forEach((img) => {
+    img.addEventListener('click', () => {
+      isPaused = !isPaused;
+    });
+  });
+
+  leftArrow.addEventListener('click', () => {
+    prevImage();
+  });
+
+  rightArrow.addEventListener('click', () => {
+    nextImage();
+  });
+</script>
+
+</body>
+</html>

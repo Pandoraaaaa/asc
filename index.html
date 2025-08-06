@@ -31,9 +31,29 @@
   <main>
     <section class="intro">
       <div class="image-placeholder">
-        <!-- Carousel Placeholder -->
-        <div class="carousel-placeholder">
-          <p>[Animal image carousel goes here]</p>
+        <!-- Animal Carousel -->
+        <div class="carousel">
+          <div class="arrow left">&#8249;</div>
+          <div class="arrow right">&#8250;</div>
+
+          <img src="assets/bull.gif" class="active" alt="Bull">
+          <img src="assets/calf.gif" alt="Calf">
+          <img src="assets/cat.gif" alt="Cat">
+          <img src="assets/chicken.gif" alt="Chicken">
+          <img src="assets/cow.gif" alt="Cow">
+          <img src="assets/dog.gif" alt="Dog">
+          <img src="assets/duck.gif" alt="Duck">
+          <img src="assets/fish.gif" alt="Fish">
+          <img src="assets/gamebird.gif" alt="Game Bird">
+          <img src="assets/goose.gif" alt="Goose">
+          <img src="assets/horse.gif" alt="Horse">
+          <img src="assets/leapingf.gif" alt="Leaping Animal">
+          <img src="assets/ostrich.gif" alt="Ostrich">
+          <img src="assets/pig.gif" alt="Pig">
+          <img src="assets/rabbit.gif" alt="Rabbit">
+          <img src="assets/rhino.gif" alt="Rhino">
+          <img src="assets/rooster.gif" alt="Rooster">
+          <img src="assets/stork.gif" alt="Stork">
         </div>
       </div>
       <div class="content">
@@ -46,7 +66,7 @@
 
         <h4>Built for Nutritionists, Trusted Worldwide</h4>
         <p>
-          Whether you’re formulating rations on a farm, in a feed mill, or as a consultant, MIXIT gives
+          Whether you're formulating rations on a farm, in a feed mill, or as a consultant, MIXIT gives
           you the control and precision you need—without the complexity of enterprise systems. Thousands
           of professionals in over 100 countries rely on MIXIT to deliver fast, accurate results.
         </p>
@@ -71,5 +91,47 @@
       <p>MixitPet is a program that calculates diets for healthy dogs and cats using foods that may be available in an average household. It is designed for dog and cat owners and is very easy to use. Just select foods from a USDA database and let linear programming calculate a nutritionally balanced diet. MixitPet is free to use. <a href="mixitpet.html">MixitPet Details</a></p>
     </section>
   </main>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    let index = 0;
+    let isPaused = false;
+
+    function showImage(i) {
+      images.forEach((img, idx) => {
+        img.classList.toggle('active', idx === i);
+      });
+    }
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }
+
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    }
+
+    let interval = setInterval(() => {
+      if (!isPaused) nextImage();
+    }, 2000);
+
+    images.forEach((img) => {
+      img.addEventListener('click', () => {
+        isPaused = !isPaused;
+      });
+    });
+
+    leftArrow.addEventListener('click', () => {
+      prevImage();
+    });
+
+    rightArrow.addEventListener('click', () => {
+      nextImage();
+    });
+  </script>
 </body>
 </html>
