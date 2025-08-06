@@ -93,44 +93,49 @@
   </main>
 
   <script>
-    const images = document.querySelectorAll('.carousel img');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
-    let index = 0;
-    let isPaused = false;
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.carousel img');
+      const leftArrow = document.querySelector('.arrow.left');
+      const rightArrow = document.querySelector('.arrow.right');
+      let index = 0;
+      let isPaused = false;
 
-    function showImage(i) {
-      images.forEach((img, idx) => {
-        img.classList.toggle('active', idx === i);
+      function showImage(i) {
+        images.forEach((img, idx) => {
+          img.classList.toggle('active', idx === i);
+        });
+      }
+
+      function nextImage() {
+        index = (index + 1) % images.length;
+        showImage(index);
+      }
+
+      function prevImage() {
+        index = (index - 1 + images.length) % images.length;
+        showImage(index);
+      }
+
+      // Make sure only the first image is visible initially
+      showImage(0);
+
+      let interval = setInterval(() => {
+        if (!isPaused) nextImage();
+      }, 2000);
+
+      images.forEach((img) => {
+        img.addEventListener('click', () => {
+          isPaused = !isPaused;
+        });
       });
-    }
 
-    function nextImage() {
-      index = (index + 1) % images.length;
-      showImage(index);
-    }
-
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      showImage(index);
-    }
-
-    let interval = setInterval(() => {
-      if (!isPaused) nextImage();
-    }, 2000);
-
-    images.forEach((img) => {
-      img.addEventListener('click', () => {
-        isPaused = !isPaused;
+      leftArrow.addEventListener('click', () => {
+        prevImage();
       });
-    });
 
-    leftArrow.addEventListener('click', () => {
-      prevImage();
-    });
-
-    rightArrow.addEventListener('click', () => {
-      nextImage();
+      rightArrow.addEventListener('click', () => {
+        nextImage();
+      });
     });
   </script>
 </body>
