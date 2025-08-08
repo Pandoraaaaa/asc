@@ -9,6 +9,28 @@
     a { color: black; text-decoration: underline; }
     details { margin-bottom: 1em; background: #d1dbe3; padding: 1em; border-radius: 5px; }
     summary { font-weight: bold; cursor: pointer; }
+    
+    .footer-branding {
+      background-color: #c6d3db;
+      padding: 2em 1em;
+      text-align: center;
+    }
+    
+    .footer-content p {
+      margin: 0.5em 0;
+      color: #000;
+    }
+    
+    .footer-logo {
+      width: 120px;
+      height: auto;
+      margin: 1em auto;
+      display: block;
+    }
+    
+    .footer-tagline {
+      font-weight: normal;
+    }
   </style>
 </head>
 <body>
@@ -81,7 +103,7 @@
           <p>The following features of MixitHandy are often not available in feed formulation programs.</p>
           <ul>
             <li>When balancing a least-cost ration there is no limit, except computer memory, to the number of ingredients, nutrients and constraints you may use. In practical terms, this means you can save thousands of ingredients, nutrients and rations in a single database and use hundreds of ingredients, nutrients and constraints in making a balanced, least-cost ration.</li>
-            <li>Get specific help with balancing rations. A balanced, least-cost ration is not possible if the ingredients that you select cannot meet your ingredient, nutrient and ratio constraints. In this case MixitHandy provides very specific help. An example of this help is the message “Lower the minimum of Protein to 12.907 or include ingredients high in Protein.”</li>
+            <li>Get specific help with balancing rations. A balanced, least-cost ration is not possible if the ingredients that you select cannot meet your ingredient, nutrient and ratio constraints. In this case MixitHandy provides very specific help. An example of this help is the message "Lower the minimum of Protein to 12.907 or include ingredients high in Protein."</li>
             <li>Ingredients can get their data automatically from rations or diets.</li>
           </ul>
         </details>
@@ -102,5 +124,13 @@
       </div>
     </section>
   </main>
+  
+  <footer class="footer-branding">
+    <div class="footer-content">
+      <p><strong>MIXIT</strong> Agricultural Software Consultants, Inc.</p>
+      <p class="footer-tagline">Least cost feed formulation software since 1979.</p>
+      <img src="assets/logo.jpg" alt="MIXIT Logo" class="footer-logo">
+    </div>
+  </footer>
 </body>
 </html>

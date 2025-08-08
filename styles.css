@@ -113,3 +113,10 @@ header {
 .arrow:hover {
   color: rgba(255, 255, 255, 1);
 }
+
+/* Mobile Media Query */
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+  }
+}
