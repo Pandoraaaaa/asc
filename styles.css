@@ -114,9 +114,19 @@ header {
   color: rgba(255, 255, 255, 1);
 }
 
-/* Mobile Media Query */
-@media (max-width: 768px) {
+/* Video responsive styles */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile Media Query - changed from 768px to 600px */
+@media (max-width: 600px) {
   .intro {
     flex-direction: column;
+  }
+  
+  video {
+    width: 100%;
   }
 }
