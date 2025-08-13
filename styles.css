@@ -4,6 +4,21 @@ body {
   background-color: #c6d3db;
   color: #000;
 }
+
+/* Make all links black instead of default blue/purple */
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #333;
+}
+
 header {
   background-color: #222;
   color: white;
