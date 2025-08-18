@@ -61,8 +61,16 @@ header {
 }
 .hero {
   background: linear-gradient(to right, #444, #333);
-  padding: 3em 1em;
+  padding: 1.5em 1em;
   text-align: center;
+}
+
+.hero h1 {
+  color: rgba(255, 0, 0, 0.5);
+}
+
+.hero .carousel {
+  margin-top: 1.5em;
 }
 .intro {
   display: flex;
@@ -135,7 +143,7 @@ video {
   height: auto;
 }
 
-/* Mobile Media Query - changed from 768px to 600px */
+/* Mobile Media Query - Responsive Navigation */
 @media (max-width: 600px) {
   .intro {
     flex-direction: column;
@@ -143,5 +151,57 @@ video {
   
   video {
     width: 100%;
+  }
+  
+  /* Stack the navigation vertically */
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+  }
+  
+  /* Center the logo */
+  .main-nav .logo {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Optional: Stack the menu items vertically too */
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+  }
+  
+  /* Make menu items full width for easier tapping */
+  .main-nav li {
+    width: 100%;
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 0.75em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5em;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .main-nav a:hover,
+  .main-nav a:active {
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Reduce hero padding on mobile */
+  .hero {
+    padding: 2em 1em;
+  }
+  
+  /* Reduce section padding on mobile */
+  .intro, .products {
+    padding: 1em;
   }
 }
