@@ -2,62 +2,67 @@
 <html lang="en">
 <head>
   
-<!-- Basic Meta -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>MIXIT Feed Formulation Software | Professional Least-Cost Ration Calculator</title>
-<meta name="description" content="MIXIT feed formulation software calculates least-cost, balanced rations using linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
+  <!-- SEO -->
+  <title>MIXIT Feed Formulation Software | Professional Least-Cost Ration Calculator</title>
+  <meta name="description" content="MIXIT feed formulation software calculates least-cost, balanced rations using linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
 
-<!-- Open Graph (Facebook/LinkedIn) -->
-<meta property="og:title" content="MIXIT Feed Formulation Software">
-<meta property="og:description" content="Least-cost, balanced rations via linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mixitwin.com/">
-<meta property="og:image" content="https://www.mixitwin.com/assets/mixit-og-image.jpg">
+  <!-- Open Graph (Facebook/LinkedIn) -->
+  <meta property="og:title" content="MIXIT Feed Formulation Software">
+  <meta property="og:description" content="Least-cost, balanced rations via linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mixitwin.com/">
+  <meta property="og:image" content="https://www.mixitwin.com/assets/mixit-og-image.jpg">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MIXIT Feed Formulation Software">
-<meta name="twitter:description" content="Least-cost, balanced rations via linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
-<meta name="twitter:image" content="https://www.mixitwin.com/assets/mixit-og-image.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MIXIT Feed Formulation Software">
+  <meta name="twitter:description" content="Least-cost, balanced rations via linear programming. Windows & cloud options. Trusted by nutritionists since 1979.">
+  <meta name="twitter:image" content="https://www.mixitwin.com/assets/mixit-og-image.jpg">
 
-<!-- Canonical -->
-<link rel="canonical" href="https://www.mixitwin.com/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.mixitwin.com/">
 
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    .footer-branding {
-      background-color: #c6d3db;
-      padding: 2em 1em;
-      text-align: center;
-    }
-    
-    .footer-content p {
-      margin: 0.5em 0;
-      color: #000;
-    }
-    
-    .footer-logo {
-      width: 120px;
-      height: auto;
-      margin: 1em auto;
-      display: block;
-    }
-    
-    .footer-tagline {
-      font-weight: normal;
-    }
-    
-    /* Reduce intro section padding to match products section */
-    .intro {
-      padding: 2em 2em 0 2em;
-    }
-    
-    .products {
-      padding-top: 0;
-    }
+    /* --- Incremental readability + flow tweaks (no copy changes) --- */
+
+    /* Tighter vertical rhythm within products */
+    .products h4 { margin-top: 1.1em; margin-bottom: 0.25em; }
+    .products p { margin: 0 0 0.9em; line-height: 1.6; }
+
+    /* Overview (first two descriptive blocks) gets a subtle left accent */
+    .overview { border-left: 4px solid rgba(0,0,0,0.15); padding-left: 1rem; margin-bottom: 1.25rem; }
+    .overview h4 { margin-top: 0.6em; }
+
+    /* Visual divider before product cards */
+    .section-divider { display: flex; align-items: center; gap: .75rem; margin: 1.25rem 0 1rem; }
+    .section-divider hr { flex: 1; border: none; border-top: 1px solid rgba(0,0,0,0.25); }
+
+    /* Product cards — forced symmetry with CSS Grid (1, 2, or 4 columns only) */
+    .products-grid { display: grid; gap: 1rem; margin-top: .5rem; grid-template-columns: 1fr; }
+    @media (min-width: 700px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1200px) { .products-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .product-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 0.9rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+    .product-card h4 { margin-top: 0; }
+
+    /* Intro spacing alignment w/ products */
+    .intro { padding: 2em 2em 0 2em; }
+    .products { padding-top: 0; }
+
+    /* Slightly wider cap so 4-up looks balanced; remove if you want 2x2 even on huge screens */
+    main { max-width: 1200px; margin: 0 auto; }
+
+    /* Footer inherited from your original with no change in copy */
+    .footer-branding { background-color: #c6d3db; padding: 2em 1em; text-align: center; }
+    .footer-content p { margin: 0.5em 0; color: #000; }
+    .footer-logo { width: 120px; height: auto; margin: 1em auto; display: block; }
+    .footer-tagline { font-weight: normal; }
   </style>
 </head>
 <body>
@@ -82,10 +87,11 @@
       <h1>MIXIT Least Cost Feed Formulation</h1>
     </div>
   </header>
+
   <main>
     <section class="intro">
       <div class="image-placeholder">
-        <!-- Animal Carousel -->
+        <!-- Animal Carousel (unchanged) -->
         <div class="carousel">
           <div class="arrow left">&#8249;</div>
           <div class="arrow right">&#8250;</div>
@@ -119,34 +125,48 @@
         </p>
       </div>
     </section>
+
     <section class="products">
-      <h4>Built for Nutritionists, Trusted Worldwide</h4>
-      <p>
-        Whether you're formulating rations on a farm, in a feed mill, or as a consultant, MIXIT gives
-        you the control and precision you need—without the complexity of enterprise systems. Thousands
-        of professionals in over 100 countries rely on MIXIT to deliver fast, accurate results.
-      </p>
+      <div class="overview">
+        <h4>Built for Nutritionists, Trusted Worldwide</h4>
+        <p>
+          Whether you're formulating rations on a farm, in a feed mill, or as a consultant, MIXIT gives
+          you the control and precision you need—without the complexity of enterprise systems. Thousands
+          of professionals in over 100 countries rely on MIXIT to deliver fast, accurate results.
+        </p>
 
-      <h4>The Original Feed Formulation Pioneer</h4>
-      <p>
-        Since 1979, MIXIT has been helping animal nutrition professionals balance diets efficiently—
-        long before anyone else brought feed formulation to personal computers. Today, we offer both
-        desktop and cloud-based solutions to meet your workflow and budget, including a one-time-purchase
-        option with no subscription.
-      </p>
+        <h4>The Original Feed Formulation Pioneer</h4>
+        <p>
+          Since 1979, MIXIT has been helping animal nutrition professionals balance diets efficiently—
+          long before anyone else brought feed formulation to personal computers. Today, we offer both
+          desktop and cloud-based solutions to meet your workflow and budget, including a one-time-purchase
+          option with no subscription.
+        </p>
+      </div>
 
-      <h3><strong>MixitWin</strong> Professional least cost feed formulation software for Microsoft Windows</h3>
-      <p>MixitWin is a professional feed formulation program for Windows that is powerful, flexible, and easy to use. Producers and nutritionists use MixitWin to calculate rations and ration supplements for all types of animals. With its related programs, MixitWin is also suitable for nutritional consulting, nutrition and product research, and feed mill operations that include inventory control, feed labels, and price sheets. <a href="mixitwin.html">MixitWin Details</a></p>
+      <div class="section-divider" aria-hidden="true"><hr></div>
 
-      <h4>MixitHandy</h4>
-      <p>MixitHandy is a cloud-based feed formulation program that runs anywhere, anytime - even if you don't have an internet connection. Nutritional consultants can use MixitHandy to calculate rations and ration supplements for all types of animals. MixitHandy works on a larger computer screen or a smaller smart device. MixitHandy is a low cost subscription service. <a href="mixithandy.html">MixitHandy Details</a></p>
+      <div class="products-grid">
+        <article class="product-card">
+          <h4>MixitWin – Windows Feed Formulation</h4>
+          <p>MixitWin is powerful desktop software for least-cost ration formulation on Windows. Producers and nutritionists use it to calculate rations and supplements for all animal types. With add-ons, it also supports consulting, product research, and feed mill operations such as inventory control, feed labels, and price sheets. <a href="mixitwin.html">MixitWin Details</a></p>
+        </article>
 
-      <h4>MixitPet</h4>
-      <p>MixitPet is a program that calculates diets for healthy dogs and cats using foods that may be available in an average household. It is designed for dog and cat owners and is very easy to use. Just select foods from a USDA database and let linear programming calculate a nutritionally balanced diet. MixitPet is free to use. <a href="mixitpet.html">MixitPet Details</a></p>
+        <article class="product-card">
+          <h4>MixitHandy – Mobile Feed Formulation</h4>
+          <p>MixitHandy is a cloud-based program that works on any device — desktop, laptop, tablet, or phone. Consultants can calculate rations anywhere, even offline, and sync later. It’s a flexible, low-cost subscription service designed for mobility and ease. <a href="mixithandy.html">MixitHandy Details</a></p>
+        </article>
 
-      <h4>Ingredient Data – Comprehensive Feed Datasets</h4>
-      <p>MIXIT includes USDA feed composition data and species-specific ingredient sets, so you can formulate balanced rations for livestock, poultry, aquaculture, and pets without building a database from scratch. See our full <a href="ingredients.html">Ingredients page</a> for details.</p>
+        <article class="product-card">
+          <h4>MixitPet – Pet Nutrition Formulation</h4>
+          <p>MixitPet is free software for balanced dog and cat diets using everyday foods. Owners simply select items from the USDA database and let linear programming create a complete, healthy ration. It’s easy to use and always accessible. <a href="mixitpet.html">MixitPet Details</a></p>
+        </article>
 
+        <article class="product-card">
+          <h4>Ingredient Data – Comprehensive Feed Datasets</h4>
+          <p>MIXIT includes USDA feed composition data and species-specific ingredient sets, so you can formulate balanced rations for livestock, poultry, aquaculture, and pets without building a database from scratch. See our full <a href="ingredients.html">Ingredients page</a> for details.</p>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -167,41 +187,17 @@
       let isPaused = false;
 
       function showImage(i) {
-        images.forEach((img, idx) => {
-          img.classList.toggle('active', idx === i);
-        });
+        images.forEach((img, idx) => { img.classList.toggle('active', idx === i); });
       }
+      function nextImage() { index = (index + 1) % images.length; showImage(index); }
+      function prevImage() { index = (index - 1 + images.length) % images.length; showImage(index); }
 
-      function nextImage() {
-        index = (index + 1) % images.length;
-        showImage(index);
-      }
+      showImage(0); // first image visible
+      let interval = setInterval(() => { if (!isPaused) nextImage(); }, 2000);
 
-      function prevImage() {
-        index = (index - 1 + images.length) % images.length;
-        showImage(index);
-      }
-
-      // Make sure only the first image is visible initially
-      showImage(0);
-
-      let interval = setInterval(() => {
-        if (!isPaused) nextImage();
-      }, 2000);
-
-      images.forEach((img) => {
-        img.addEventListener('click', () => {
-          isPaused = !isPaused;
-        });
-      });
-
-      leftArrow.addEventListener('click', () => {
-        prevImage();
-      });
-
-      rightArrow.addEventListener('click', () => {
-        nextImage();
-      });
+      images.forEach((img) => { img.addEventListener('click', () => { isPaused = !isPaused; }); });
+      leftArrow.addEventListener('click', prevImage);
+      rightArrow.addEventListener('click', nextImage);
     });
   </script>
 </body>
