@@ -30,7 +30,7 @@
     .products p { margin: 0 0 0.9em; line-height: 1.6; }
 
     /* Overview (first two descriptive blocks) gets a subtle left accent */
-    .overview { border-left: 4px solid rgba(0,0,0,0.15); padding-left: 1rem; margin-bottom: 1.25rem; }
+    .overview { margin-bottom: 1.25rem; }
     .overview h4 { margin-top: 0.6em; }
 
     /* Visual divider before product cards */
@@ -57,7 +57,39 @@
     .footer-content p { margin: 0.5em 0; color: #000; }
     .footer-logo { width: 120px; height: auto; margin: 1em auto; display: block; }
     .footer-tagline { font-weight: normal; }
-  </style>
+  
+    /* Tighten heading-to-text spacing inside the intro content
+       (half current distance), without changing spacing above headings */
+    
+    /* Tighter heading-to-own-paragraph spacing without affecting spacing above headings */
+    
+
+    /* Pair headings tightly with their own paragraphs:
+       - keep spacing ABOVE headings unchanged (margin-top untouched)
+       - remove heading bottom margin
+       - add small top margin on following paragraph */
+    .intro .content h3,
+    .intro .content h4 { margin-bottom: 0; }
+
+    .intro .content h3 + p,
+    .intro .content h4 + p { margin-top: 0.4em; }
+
+    /* Layout for intro section with right-side image */
+    .intro-flex { display: flex; gap: 2em; align-items: stretch; }
+    .intro-left { flex: 1 1 0%; display: flex; gap: 2em; align-items: flex-start; }
+    .intro-right { flex: 0 0 28%; display: flex; justify-content: center; align-items: stretch; }
+    .intro-right img { height: 100%; width: auto; object-fit: contain; }
+    @media (max-width: 800px) {
+  .intro-flex { flex-direction: column; }
+  .intro-left { display: block; } /* fallback to original stacked flow on mobile */
+  .intro-right { flex: none; margin-top: 1em; align-items: center; }
+  .intro-right img { height: auto; width: 100%; max-height: 60vh; }
+}
+      .intro-right { flex: 0 0 28%; display: flex; justify-content: center; align-items: stretch; }
+    }
+    
+    .intro-left .content { display: flex; flex-direction: column; }
+    </style>
 </head>
 <body>
 <header>
@@ -82,8 +114,8 @@
 </div>
 </header>
 <main>
-<div class="top-layout"><div class="top-left"><section class="intro">
-<div class="image-placeholder">
+<section class="intro">
+<div class="intro-flex"><div class="intro-left"><div class="image-placeholder">
 <!-- Animal Carousel (unchanged) -->
 <div class="carousel">
 <div class="arrow left">‹</div>
@@ -107,30 +139,29 @@
 <img alt="Rooster" src="assets/rooster.gif"/>
 <img alt="Stork" src="assets/stork.gif"/>
 </div>
-</div>
-<div class="content">
+</div><div class="content">
 <h3>Feed Formulation Software for Balanced, Least-Cost Rations</h3>
-<p id="introPara">
+<p>
           MIXIT helps you create nutritionally balanced diets for livestock, poultry, fish, and pets—
           using your ingredients and your nutrient targets. Our software applies linear programming to
           calculate rations that meet your requirements at the lowest possible cost.
         </p>
-</div>
-</section><div class="overview">
+<div class="overview">
 <h4>Built for Nutritionists, Trusted Worldwide</h4>
-<p id="overviewPara1">
+<p>
           Whether you're formulating rations on a farm, in a feed mill, or as a consultant, MIXIT gives
           you the control and precision you need—without the complexity of enterprise systems. Thousands
           of professionals in over 100 countries rely on MIXIT to deliver fast, accurate results.
         </p>
 <h4>The Original Feed Formulation Pioneer</h4>
-<p id="overviewPara2">
+<p>
           Since 1979, MIXIT has been helping animal nutrition professionals balance diets efficiently—
           long before anyone else brought feed formulation to personal computers. Today, we offer both
           desktop and cloud-based solutions to meet your workflow and budget, including a one-time-purchase
           option with no subscription.
         </p>
-</div></div><aside aria-label="MIXIT marketing image" class="top-art"><figure><img alt="MIXIT cowboy artwork with integrated text" id="promoArt" src="assets/waffle.svg"/></figure></aside></div><section class="products">
+</div></div></div><div class="intro-right"><img alt="Decorative Image" src="assets/waffle.svg"/></div></div></section>
+<section class="products">
 <div aria-hidden="true" class="section-divider"><hr/></div>
 <div class="products-grid">
 <article class="product-card">
@@ -182,48 +213,19 @@
     });
   </script>
 <script>
-(function() {
-  function px(v){ return v ? parseFloat(v) : 0; }
-
-  function resizeArt() {
-    var img = document.getElementById('promoArt');
-    var leftCol = document.querySelector('.top-left');
-    var first = document.getElementById('introPara');
-    var last  = document.getElementById('overviewPara2');
-    if (!img || !leftCol || !first || !last) return;
-
-    if (window.matchMedia('(max-width: 900px)').matches) {
-      img.style.height = '';
-      img.style.width = '100%';
-      img.style.maxWidth = '100%';
-      img.style.marginTop = '';
-      return;
-    }
-
-    // Get rectangles
-    var rLeft  = leftCol.getBoundingClientRect();
-    var rFirst = first.getBoundingClientRect();
-    var rLast  = last.getBoundingClientRect();
-    var csLast = window.getComputedStyle(last);
-
-    // Offset so the top of the image aligns with the top of the first paragraph
-    var offset = rFirst.top - rLeft.top; // pixels to nudge down
-    // Height from top of first paragraph to bottom of last paragraph + its bottom margin
-    var height = (rLast.bottom + px(csLast.marginBottom)) - rFirst.top;
-
-    if (height > 0) {
-      img.style.marginTop = offset + 'px';
-      img.style.height    = height + 'px';
-      img.style.width     = 'auto';
-      img.style.maxWidth  = '100%';
-      img.style.objectFit = 'contain';
-      img.style.objectPosition = 'top center';
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  const left = document.querySelector('.intro-left');
+  const img = document.querySelector('.intro-right img');
+  if (!left || !img) return;
+  function syncImageHeight() {
+    // Get the rendered height of the left column (carousel + 3 paragraphs)
+    const h = left.getBoundingClientRect().height;
+    img.style.height = h + 'px';
+    img.style.width = 'auto';
+    img.style.maxWidth = '100%';
   }
-
-  window.addEventListener('DOMContentLoaded', resizeArt);
-  window.addEventListener('load', resizeArt);
-  window.addEventListener('resize', resizeArt);
-})();
+  syncImageHeight();
+  window.addEventListener('resize', syncImageHeight);
+});
 </script></body>
 </html>
