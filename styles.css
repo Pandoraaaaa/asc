@@ -29,14 +29,30 @@ header {
   padding: 0.5em 1em;
   background-color: black;
 }
+
+/* Make company name red */
+.company-name {
+  color: rgba(255, 0, 0, 1.0);
+}
+
+/* Updated contact button with black background and red text */
 .contact-button {
-  background-color: #fff;
-  color: black;
+  background-color: #000 !important;
+  color: rgba(255, 0, 0, 1.0) !important;
   padding: 0.25em 0.5em;
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
 }
+
+.contact-button:visited {
+  color: rgba(255, 0, 0, 1.0) !important;
+}
+
+.contact-button:hover {
+  color: rgba(255, 0, 0, 1.0) !important;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
