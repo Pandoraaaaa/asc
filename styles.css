@@ -30,9 +30,10 @@ header {
   background-color: black;
 }
 
-/* Make company name red */
+/* Make company name red and bold to match contact button */
 .company-name {
   color: rgba(255, 0, 0, 1.0);
+  font-weight: bold;
 }
 
 /* Updated contact button with black background and red text */
