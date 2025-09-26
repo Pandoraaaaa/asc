@@ -160,8 +160,41 @@ video {
   height: auto;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5em;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Mobile Media Query - Responsive Navigation */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .intro {
     flex-direction: column;
   }
@@ -170,46 +203,80 @@ video {
     width: 100%;
   }
   
-  /* Stack the navigation vertically */
+  /* Show hamburger menu on mobile */
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Keep main nav horizontal on mobile but hide menu initially */
   .main-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    text-align: center;
+    position: relative;
   }
   
-  /* Center the logo */
-  .main-nav .logo {
-    margin-bottom: 0.5em;
-  }
-  
-  /* Optional: Stack the menu items vertically too */
+  /* Hide the navigation menu by default on mobile */
   .main-nav ul {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #333;
     flex-direction: column;
-    gap: 0.5em;
-    width: 100%;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 80px 0 20px 0;
+    margin: 0;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
   }
   
-  /* Make menu items full width for easier tapping */
+  /* Show menu when active */
+  .main-nav ul.active {
+    left: 0;
+  }
+  
+  /* Mobile menu items */
   .main-nav li {
     width: 100%;
+    border-bottom: 1px solid #555;
   }
   
   .main-nav a {
     display: block;
-    padding: 0.75em;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5em;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 1em 1.5em;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    border-left: 4px solid transparent;
   }
   
   .main-nav a:hover,
   .main-nav a:active {
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #444;
+    border-left-color: rgba(255, 0, 0, 1.0);
+  }
+  
+  /* Overlay for mobile menu */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
   }
   
   /* Reduce hero padding on mobile */

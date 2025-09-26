@@ -99,6 +99,11 @@
 </div>
 <nav class="main-nav">
 <div class="logo">Feed Formulation Software</div>
+<button class="hamburger" aria-label="Toggle navigation menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="mixitwin.html">MixitWin</a></li>
@@ -109,6 +114,7 @@
 <li><a href="about.html">About Us</a></li>
 </ul>
 </nav>
+<div class="nav-overlay"></div>
 <div class="hero">
 <h1>MIXIT Least Cost Feed Formulation</h1>
 </div>
@@ -164,19 +170,19 @@
 <div aria-hidden="true" class="section-divider"><hr/></div>
 <div class="products-grid">
 <article class="product-card">
-<h4>MixitWin – Windows Feed Formulation</h4>
+<h4>MixitWin — Windows Feed Formulation</h4>
 <p>MixitWin is powerful desktop software for least-cost ration formulation on Windows. Producers and nutritionists use it to calculate rations and supplements for all animal types. With add-ons, it also supports consulting, product research, and feed mill operations such as inventory control, feed labels, and price sheets. <a href="mixitwin.html">MixitWin Details</a></p>
 </article>
 <article class="product-card">
-<h4>MixitHandy – Mobile Feed Formulation</h4>
-<p>MixitHandy is a cloud-based program that works on any device — desktop, laptop, tablet, or phone. Consultants can calculate rations anywhere, even offline, and sync later. It’s a flexible, low-cost subscription service designed for mobility and ease. <a href="mixithandy.html">MixitHandy Details</a></p>
+<h4>MixitHandy — Mobile Feed Formulation</h4>
+<p>MixitHandy is a cloud-based program that works on any device — desktop, laptop, tablet, or phone. Consultants can calculate rations anywhere, even offline, and sync later. It's a flexible, low-cost subscription service designed for mobility and ease. <a href="mixithandy.html">MixitHandy Details</a></p>
 </article>
 <article class="product-card">
-<h4>MixitPet – Pet Nutrition Formulation</h4>
-<p>MixitPet is free software for balanced dog and cat diets using everyday foods. Owners simply select items from the USDA database and let linear programming create a complete, healthy ration. It’s easy to use and always accessible. <a href="mixitpet.html">MixitPet Details</a></p>
+<h4>MixitPet — Pet Nutrition Formulation</h4>
+<p>MixitPet is free software for balanced dog and cat diets using everyday foods. Owners simply select items from the USDA database and let linear programming create a complete, healthy ration. It's easy to use and always accessible. <a href="mixitpet.html">MixitPet Details</a></p>
 </article>
 <article class="product-card">
-<h4>Ingredient Data – Comprehensive Feed Datasets</h4>
+<h4>Ingredient Data — Comprehensive Feed Datasets</h4>
 <p>MIXIT includes USDA feed composition data and species-specific ingredient sets, so you can formulate balanced rations for livestock, poultry, aquaculture, and pets without building a database from scratch. See our full <a href="ingredients.html">Ingredients page</a> for details.</p>
 </article>
 </div>
@@ -222,9 +228,58 @@ document.addEventListener('DOMContentLoaded', function () {
     img.style.height = h + 'px';
     img.style.width = 'auto';
     img.style.maxWidth = '100%';
+    img.style.objectFit = 'contain';
   }
   syncImageHeight();
   window.addEventListener('resize', syncImageHeight);
 });
-</script></body>
+</script>
+<script>
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.main-nav ul');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const navLinks = document.querySelectorAll('.main-nav a');
+
+  function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    
+    // Prevent body scrolling when menu is open
+    if (navMenu.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Toggle menu when hamburger is clicked
+  hamburger.addEventListener('click', toggleMenu);
+  
+  // Close menu when overlay is clicked
+  navOverlay.addEventListener('click', closeMenu);
+  
+  // Close menu when a nav link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  // Close menu when escape key is pressed
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+});
+</script>
+</body>
 </html>
