@@ -1,0 +1,70 @@
+<nav class="main-nav">
+<div class="logo">Feed Formulation Software</div>
+<button class="hamburger" aria-label="Toggle navigation menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="mixitwin.html">MixitWin</a></li>
+<li><a href="mixithandy.html">MixitHandy</a></li>
+<li><a href="mixitpet.html">MixitPet</a></li>
+<li><a href="ingredients.html">Ingredients</a></li>
+<li><a href="resources.html">Resources</a></li>
+<li><a href="about.html">About Us</a></li>
+</ul>
+</nav>
+<div class="nav-overlay"></div>
+
+<script>
+// Hamburger menu functionality - runs immediately when loaded
+(function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.main-nav ul');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const navLinks = document.querySelectorAll('.main-nav a');
+
+  function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    
+    // Prevent body scrolling when menu is open
+    if (navMenu.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Toggle menu when hamburger is clicked
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
+  
+  // Close menu when overlay is clicked
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+  }
+  
+  // Close menu when a nav link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  // Close menu when escape key is pressed
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+})();
+</script>
