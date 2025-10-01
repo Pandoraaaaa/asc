@@ -221,16 +221,19 @@ video {
     width: 80%;
     max-width: 300px;
     height: 100vh;
+    max-height: 100vh;
     background-color: #333;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: 80px 0 20px 0;
+    padding: 80px 0 80px 0;
     margin: 0;
     transition: left 0.3s ease-in-out;
     z-index: 1000;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    box-sizing: border-box;
   }
   
   /* Show menu when active */
